@@ -19,6 +19,10 @@ jobs:
           repository: engelsystem/engelsystem
           ref: ${{ github.ref_name }} # Versucht, den gleichen Tag/Branch wie im Trigger-Event auszuchecken
 
+      - name: Debug - List files
+        run: ls -laR
+        continue-on-error: true
+
       - name: Log in to GHCR
         uses: docker/login-action@v3
         with:
